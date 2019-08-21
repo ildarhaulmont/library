@@ -24,7 +24,7 @@ public class Book extends StandardEntity {
     @Column(name = "NAME", nullable = false)
     private String name;
 
-    @Column(name = "AUTHOR", length = 300)
+    @Column(name = "AUTHOR", length = 500)
     protected String author;
 
     @Temporal(TemporalType.DATE)
