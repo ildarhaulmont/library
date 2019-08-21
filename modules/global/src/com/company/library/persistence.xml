@@ -4,5 +4,6 @@
     <persistence-unit name="library"
                       transaction-type="RESOURCE_LOCAL">
         <class>com.company.library.entity.Book</class>
+
     </persistence-unit>
 </persistence>

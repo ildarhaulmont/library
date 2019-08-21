@@ -19,6 +19,7 @@
             <column width="300px">
                 <field property="name"/>
                 <field property="publishDate"/>
+                <field property="author"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"

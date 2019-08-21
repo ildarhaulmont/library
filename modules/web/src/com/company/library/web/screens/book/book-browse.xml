@@ -38,6 +38,7 @@
             <columns>
                 <column id="name"/>
                 <column id="publishDate"/>
+                <column id="author"/>
             </columns>
             <rows datasource="booksDs"/>
             <rowsCount/>
