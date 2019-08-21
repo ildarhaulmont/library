@@ -10,6 +10,7 @@ create table LIB_BOOK (
     DELETED_BY varchar(50),
     --
     NAME varchar(255) not null,
+    AUTHOR varchar(300),
     PUBLISH_DATE date,
     --
     primary key (ID)

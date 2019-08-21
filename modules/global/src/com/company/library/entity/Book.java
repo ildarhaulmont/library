@@ -24,9 +24,21 @@ public class Book extends StandardEntity {
     @Column(name = "NAME", nullable = false)
     private String name;
 
+    @Column(name = "AUTHOR", length = 300)
+    protected String author;
+
     @Temporal(TemporalType.DATE)
     @Column(name = "PUBLISH_DATE")
     private Date publishDate;
+
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
 
 
     public String getName() {
