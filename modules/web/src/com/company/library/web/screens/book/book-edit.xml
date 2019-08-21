@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://BookEdit.caption"
+        class="com.company.library.web.screens.book.BookEdit"
+        datasource="bookDs"
+        focusComponent="fieldGroup"
+        messagesPack="com.company.library.web.screens.book">
+    <dsContext>
+        <datasource id="bookDs"
+                    class="com.company.library.entity.Book"
+                    view="book-edit"/>
+    </dsContext>
+    <dialogMode height="AUTO"
+                width="AUTO"/>
+    <layout expand="windowActions"
+            spacing="true">
+        <fieldGroup id="fieldGroup"
+                    datasource="bookDs">
+            <column width="300px">
+                <field property="name"/>
+                <field property="publishDate"/>
+            </column>
+        </fieldGroup>
+        <frame id="windowActions"
+               screen="editWindowActions"/>
+    </layout>
+</window>

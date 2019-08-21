@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
+        caption="msg://BookBrowse.caption"
+        class="com.company.library.web.screens.book.BookBrowse"
+        focusComponent="booksTable"
+        lookupComponent="booksTable"
+        messagesPack="com.company.library.web.screens.book">
+    <dsContext>
+        <groupDatasource id="booksDs"
+                         class="com.company.library.entity.Book"
+                         view="book-browse">
+            <query>
+                <![CDATA[select e from lib$Book e order by e.createTs desc]]>
+            </query>
+        </groupDatasource>
+    </dsContext>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="booksTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="booksTable"
+                datasource="booksDs">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="booksTable"
+                    multiselect="true"
+                    width="100%">
+            <actions>
+                <action id="create"
+                        openType="DIALOG"/>
+                <action id="edit"
+                        openType="DIALOG"/>
+                <action id="remove"/>
+                <action id="excel"/>
+                <action id="refresh"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="publishDate"/>
+            </columns>
+            <rows datasource="booksDs"/>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn"
+                        action="booksTable.create"/>
+                <button id="editBtn"
+                        action="booksTable.edit"/>
+                <button id="removeBtn"
+                        action="booksTable.remove"/>
+                <button id="excelBtn"
+                        action="booksTable.excel"/>
+                <button id="refreshBtn"
+                        action="booksTable.refresh"/>
+            </buttonsPanel>
+        </groupTable>
+    </layout>
+</window>
